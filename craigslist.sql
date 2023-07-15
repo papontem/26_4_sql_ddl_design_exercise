@@ -24,7 +24,7 @@ CREATE TABLE users
 (
     id SERIAL PRIMARY KEY,
     username TEXT VARCHAR(25) UNIQUE,
-    user_preffered_region_id INTEGER  REFERENCES regions (id) ON DELETE NULL,
+    user_preffered_region_id INTEGER REFERENCES regions (id) ON DELETE NULL,
 );
 
 CREATE TABLE posts
@@ -41,4 +41,5 @@ CREATE TABLE categories
 (
     id SERIAL PRIMARY KEY,
     category TEXT VARCHAR(30) NOT NULL,
+    post_id INTEGER REFERENCES posts (id) NOT NULL ON DELETE CASCADE
 );
