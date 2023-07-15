@@ -75,3 +75,4 @@ CREATE TABLE match_goals
     goalie_player_id INTEGER REFERENCES players (id) ON DELETE NULL
 
 );
+ 
