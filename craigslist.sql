@@ -17,7 +17,6 @@ CREATE TABLE regions
 (
     id SERIAL PRIMARY KEY,
     region TEXT VARCHAR(100),
-    PRIMARY KEY(id)
 );
 
 CREATE TABLE users
