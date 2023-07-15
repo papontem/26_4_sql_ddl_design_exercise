@@ -1,3 +1,4 @@
+-- MADE BY PAM --
 -- from the terminal run:
 -- psql < medical_center_db.sql
 
