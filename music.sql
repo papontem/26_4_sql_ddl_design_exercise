@@ -1,6 +1,9 @@
 -- from the terminal run:
 -- psql < music.sql
+-- -- PAM: THE GIVEN ORIGINAL SCHEMA -- --  
+/*  PAM Critique: we can put aritist, album and producers into their own tables, 
 
+*/
 DROP DATABASE IF EXISTS music;
 
 CREATE DATABASE music;

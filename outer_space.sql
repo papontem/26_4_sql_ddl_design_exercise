@@ -7,14 +7,12 @@ CREATE DATABASE outer_space;
 
 \c outer_space
 
--- Create the galaxies table
 CREATE TABLE galaxies
 (
   id SERIAL PRIMARY KEY,
   name TEXT NOT NULL
 );
 
--- Create the stars table
 CREATE TABLE stars
 (
   id SERIAL PRIMARY KEY,
@@ -22,7 +20,6 @@ CREATE TABLE stars
   galaxy_id INTEGER REFERENCES galaxies (id) ON DELETE CASCADE
 );
 
--- Create the planets table
 CREATE TABLE planets
 (
   id SERIAL PRIMARY KEY,
@@ -32,7 +29,6 @@ CREATE TABLE planets
   galaxy_id INTEGER REFERENCES galaxies (id) ON DELETE CASCADE
 );
 
--- Create the moons table
 CREATE TABLE moons
 (
   id SERIAL PRIMARY KEY,
@@ -41,14 +37,11 @@ CREATE TABLE moons
  
 );
 
-
--- Insert data into the galaxies table
 INSERT INTO galaxies 
 	(name)
 VALUES 
 	('Milky Way');
 
--- Insert data into the stars table
 INSERT INTO stars 
 	(name, galaxy_id)
 VALUES 
@@ -56,18 +49,16 @@ VALUES
 	('Proxima Centauri', 1),
 	('Gliese 876', 1);
 
--- Insert data into the planets table
 INSERT INTO planets
 	(name, orbit_in_E_yrs, orbiting_star_id, galaxy_id)
 VALUES 
-	('Earth',			  	 1.00,  	1,	 1	),
-	('Mars', 			  	 1.88,  	1,	 1	),
-	('Venus',			  	 0.62,  	1,	 1	),
-	('Neptune', 		  	 164.8, 	1,	 1	),
-	('Proxima Centauri b',	 0.03,  	2,	 1	),
-	('Gliese 876 b',		 0.23,  	3,	 1	);
+	('Earth', 1.00, 1, 1),
+	('Mars', 1.88, 1, 1),
+	('Venus', 0.62, 1, 1),
+	('Neptune', 164.8, 1, 1),
+	('Proxima Centauri b', 0.03, 2,1),
+	('Gliese 876 b', 0.23, 3,1);
 
--- Insert data into the moons table
 INSERT INTO moons 
 	(name, planet_id )
 VALUES 
@@ -99,8 +90,6 @@ FROM planets p
 JOIN stars s ON p.orbiting_star_id = s.id
 LEFT JOIN moons m ON m.planet_id = p.id
 LEFT JOIN planets pm ON pm.id = m.planet_id;
-
-
 
 -- -- PAM: THE GIVEN ORIGINAL SCHEMA -- --  
 /*  PAM Critique: repeating values sun, milky way, able to make other tables to normalize data, 
