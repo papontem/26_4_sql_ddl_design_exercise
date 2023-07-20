@@ -10,8 +10,8 @@ CREATE DATABASE craigslist_db;
 
 -- Region: of the craigslist post (San Francisco, Atlanta, Seattle, etc)
 -- Users: username, preferred region
--- Posts: title, text, user , post location, post region
 -- Categories: that each post belongs to
+-- Posts: title, text, user , post location, post region
 
 CREATE TABLE regions
 (
@@ -80,9 +80,6 @@ VALUES
     (4, 2, 4,'Selling Bicycles', 'I have a variety of bicycles for sale. From mountain bikes to city cruisers. Contact me for more details.', '123 Main St'),
     (5, 1, 5,'Job Opportunity', 'We are hiring! Looking for motivated individuals to join our team. Competitive salary and benefits. Apply now!', '456 Elm Ave'),
     (6, 3, 6,'Apartment for Rent', 'Spacious 2-bedroom apartment available for rent. Great location and amenities. Contact for viewing.', '789 Oak Dr');
-
-
-
 
 
 -- get everything 0_0 neatly -- 

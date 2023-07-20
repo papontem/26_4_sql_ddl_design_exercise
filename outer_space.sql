@@ -91,6 +91,30 @@ JOIN stars s ON p.orbiting_star_id = s.id
 LEFT JOIN moons m ON m.planet_id = p.id
 LEFT JOIN planets pm ON pm.id = m.planet_id;
 
+-- CASE WHEN FOR REPLACEING DUPLICATES / IF | TODO: make a query that should output like this 
+--     planet_name     | moon_name  | orbits_star_name | star_orbit_in_earth_years
+-- --------------------+------------+------------------+---------------------------
+--  Earth              | The Moon   | The Sun          |                         1
+--  Mars               | Phobos     |    '-^-'         |                      1.88
+--  Mars               | Deimos     |    '-^-'         |                      1.88
+--  Neptune            | Naiad      |    '-^-'         |                     164.8
+--  '-^-'              | Thalassa   |    '-^-'         |                     164.8
+--  '-^-'              | Despina    |    '-^-'         |                     164.8
+--  '-^-'              | Galatea    |    '-^-'         |                     164.8
+--  '-^-'              | Larissa    |    '-^-'         |                     164.8
+--  '-^-'              | S/2004 N 1 |    '-^-'         |                     164.8
+--  '-^-'              | Proteus    |    '-^-'         |                     164.8
+--  '-^-'              | Triton     |    '-^-'         |                     164.8
+--  '-^-'              | Nereid     |    '-^-'         |                     164.8
+--  '-^-'              | Halimede   |    '-^-'         |                     164.8
+--  '-^-'              | Sao        |    '-^-'         |                     164.8
+--  '-^-'              | Laomedeia  |    '-^-'         |                     164.8
+--  '-^-'              | Psamathe   |    '-^-'         |                     164.8
+--  '-^-'              | Neso       |    '-^-'         |                     164.8
+--  Proxima Centauri b |            | Proxima Centauri |                      0.03
+--  Gliese 876 b       |            | Gliese 876       |                      0.23
+--  Venus              |            | The Sun          |                      0.62
+
 -- -- PAM: THE GIVEN ORIGINAL SCHEMA -- --  
 /*  PAM Critique: repeating values sun, milky way, able to make other tables to normalize data, 
 	long moons array for neptune stands out too much,
